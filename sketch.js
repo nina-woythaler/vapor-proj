@@ -1,26 +1,26 @@
 function setup() {
   createCanvas(700, 700);
-  
-  for (let i=25; i<50; i++) {
-    clear();
-    resetMatrix();
+
+  // for (let i=25; i<50; i++) {
+  //   clear();
+  //   resetMatrix();
     background(200);
     // scale(0.5,0.5);
     doanart(new Random());
-    saveCanvas("generated/"+i,'jpg');
-    
-  }
+    //saveCanvas("generated/"+i,'jpg');
+
+  // }
 }
 
 function doanart(R) {
 // rect(0,0,width,height);
-  
+
   var sign1;
   var angle;
   let r = R.random_num(0,PI/6.0);
-  
+
   let rand = R.random_choice([0,1,2,3]);
-  
+
   if (rand == 0) {
     sign1 = 1;
     angle = -r;
@@ -45,21 +45,21 @@ function doanart(R) {
   //1, pi/6, width-,0
   //-1, -pi/6, weirdone,-
   //-1, pi/6, last
-  
-  
-  
+
+
+
   // let angle = PI/6.0;//R.random_num(0, PI/6.0);
-  
-  
+
+
   // translate(0,-sin(angle)*width);
   // translate(width-sin(angle)*width,0);
   // translate(-height*sqrt(2)*cos(PI/4.0+angle)+width,0);
    // translate((height/cos(angle)-height)*cos(angle),-height*sqrt(2)*cos(PI/4.0-angle)+width);
-  
+
   rotate(angle);
   // rect(0,0,width,height);
   scale(sign1, 1);
-  
+
 
   translate(min(sign1*width,0),0);
   squig(R);
@@ -83,7 +83,7 @@ function squig(R) {
   let gfrac = R.random_num(0, 0.65) + 0.7;
   let bfrac = R.random_num(0, 0.65) + 0.7;
   let init = R.random_num(0, 20) + 15;
-  
+
   let rand8 = R.random_num(0.36,0.62);
 
   //background(121, 140, 130);
